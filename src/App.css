@@ -1,24 +1,56 @@
-.App {
-  text-align: center;
+html {
+    min-height: 100%
+}
+#root {
+    width: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.hide {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+.show {
+  width: 100%;
+  height: 100%;
+  transition-property: all;
+	transition-duration: 1.0s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  opacity: 1;
+  visibility: visible;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.slideUp {
+    animation-name: slideUp;
+    -webkit-animation-name: slideUp;
+    animation-duration: 4s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
 }
 
-.App-intro {
-  font-size: large;
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@-webkit-keyframes slideUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
 }
