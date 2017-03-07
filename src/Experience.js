@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 
 export default class Experience extends React.Component {
 
