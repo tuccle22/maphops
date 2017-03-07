@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import LeftSide from './LeftSide.js';
 import Experience from './Experience.js';
 import Education from './Education.js';
@@ -13,7 +12,7 @@ export default class Resume extends React.Component {
       animation: "hide",
     }
   }
-  
+
   componentWillMount() {
     this.setState({animation: "slideUp"})
   }
