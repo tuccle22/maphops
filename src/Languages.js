@@ -1,8 +1,4 @@
 import React from 'react';
-import Photo from './Photo.js';
-import ContactInfo from './ContactInfo.js';
-import Framework from './Frameworks.js';
-
 
 export default class LeftSide extends React.Component {
 
@@ -18,10 +14,6 @@ export default class LeftSide extends React.Component {
 
     return (
       <div>
-        <div className="w3-white w3-text-grey w3-card-2">
-          <Photo />
-          <ContactInfo />
-          <Framework />
           <div className="w3-container">
               <hr/>
             <p className="w3-large w3-text-theme">
@@ -58,9 +50,7 @@ export default class LeftSide extends React.Component {
             <div className="w3-light-grey w3-round-xlarge">
               <div className="w3-round-xlarge w3-teal" style={htmlcss}/>
             </div>
-            <br/>
           </div>
-        </div>
       </div>
     );
   }
