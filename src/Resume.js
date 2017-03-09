@@ -18,8 +18,8 @@ export default class Resume extends React.Component {
 
     return (
       <div>
-        <div className="w3-content w3-center w3-wide">
-          <p className="w3-text-white w3-text-shadow">Resume | Tucker Cleary</p>
+        <div className="w3-content">
+          <h3 className="w3-text-white w3-center w3-wide">Resume | Tucker Cleary</h3>
         </div>
         <div className="w3-content w3-margin-top">
           <div className="w3-row-padding">
