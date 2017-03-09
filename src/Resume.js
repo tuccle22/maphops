@@ -12,19 +12,12 @@ import Footer from './Footer.js';
 export default class Resume extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      animation: "hide",
-    }
-  }
-
-  componentDidMount () {
-   this.setState({animation: "w3-animate-bottom"});
   }
 
   render() {
 
     return (
-      <div className={this.state.animation}>
+      <div>
         <div className="w3-content w3-center w3-wide">
           <p className="w3-text-white w3-text-shadow">Resume | Tucker Cleary</p>
         </div>
