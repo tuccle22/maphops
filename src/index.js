@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Resume from './Resume';
+import Head from './Head.js';
 
 ReactDOM.render(
-  <Resume />,
+  <Head />,
   document.getElementById('root')
 );
