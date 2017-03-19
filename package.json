@@ -8,6 +8,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-helmet": "^4.0.0",
+    "reflux": "^6.4.1",
     "universal-router": "^2.0.0"
   },
   "devDependencies": {
