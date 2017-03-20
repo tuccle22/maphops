@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Reflux from 'reflux';
 import Languages from './Languages.js';
 import Experience from './Experience.js';
 import Education from './Education.js';
@@ -8,22 +8,17 @@ import Frameworks from './Frameworks.js';
 import ContactInfo from './ContactInfo.js';
 import Header from './Header.js';
 import Footer from './Footer.js';
+import ThemeStore from './reflux/ThemeStore.js';
 
-import './App.css';
-
-export default class Resume extends React.Component {
+export default class Resume extends Reflux.Component {
   constructor(props) {
-    super();
-    this.state = {
-      theme: {
-        textColor: 'w3-text-blue',
-        color: 'w3-blue',
-        hover: 'w3-hover-light-grey'
-      }
-    };
+    super(props);
+    this.state = { };
+    this.store = ThemeStore;
   }
 
   render() {
+
 
     return (
       <div>

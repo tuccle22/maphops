@@ -1,85 +1,66 @@
 import React from 'react';
+import Themes from './Themes.js';
+import { ThemeActions } from './reflux/RefluxActions.js';
+import ThemeStore from './reflux/ThemeStore.js';
+import Reflux from 'reflux';
 
-export default class Resume extends React.Component {
+export default class ThemePicker extends Reflux.Component {
   constructor(props) {
     super(props);
-    this.color = {
-      w3color: 'w3-red',
-      w3text: 'w3-text-red',
-      w3hover: 'w3-hover-red',
-      w3hovertext: 'w3-hover-text-red'
-    };
+    this.state = { };
+    this.store = ThemeStore;
   }
 
-  changeColor(color) {
-    this.color = {
-      w3color: 'w3-' + color,
-      w3text: 'w3-text-' + color,
-      w3hover: 'w3-hover-' + color,
-      w3hovertext: 'w3-color-text-' + color
-    };
-  }
+  // onClick(key) {
+  //   ThemeActions.changeColor(Themes.THEME[key]);
+  //   this.props.shouldMount;
+  // }
 
   render() {
 
-    return (
-      <div className="w3-display-container">
-        <div className="w3-row">
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('red')}} className="w3-btn w3-red"></button>
-          </div>
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('pink')}} className="w3-btn w3-pink"></button>
-          </div>
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('orange')}} className="w3-btn w3-orange"></button>
-          </div>
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('yellow')}} className="w3-btn w3-yellow"></button>
-          </div>
-        </div>
-          <div className="w3-row">
-            <div className="w3-cell m3">
-              <button onClick={() => {this.changeColor('green')}} className="w3-btn w3-green"></button>
-            </div>
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('teal')}} className="w3-btn w3-teal"></button>
-          </div>
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('cyan')}} className="w3-btn w3-cyan"></button>
-          </div>
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('lime')}} className="w3-btn w3-lime"></button>
-          </div>
-        </div>
-        <div className="w3-row">
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('blue')}} className="w3-btn w3-blue"></button>
-          </div>
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('indigo')}} className="w3-btn w3-indigo"></button>
-          </div>
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('purple')}} className="w3-btn w3-purple"></button>
-          </div>
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('khaki')}} className="w3-btn w3-khaki"></button>
+    const something = {
+      paddingLeft: '32px',
+      paddingRight: '32px',
+      background:'#f1f1f1'
+    }
+
+    const size = {
+      width: '48px',
+      height: '48px',
+      cursor: 'pointer'
+
+    }
+
+    const test = Object.keys(Themes.THEME).map((key) => {
+
+      var selected = Themes.THEME[key] === this.state.theme ? ' w3-disabled' : '';
+        return (
+          <button key={key}
+                  style={size}
+                  className={'w3-margin w3-button w3-xlarge w3-circle \
+                              w3-border w-center w3-animate-zoom ' +
+                              Themes.THEME[key].classColor + selected}
+                  onClick={this.props.shouldMount}
+                  onMouseOver={() => ThemeActions.tempColorChange(Themes.THEME[key])}
+                  onMouseOut={() => ThemeActions.prevColor(Themes.THEME[key])}>
+          </button>
+        );
+    });
+
+    return(
+      <div>
+        <div className={'w3-bar ' + this.state.theme.classColor}>
+          <h4 className='w3-center w3-padding-16'>
+            Choose a color:
+          </h4>
+        <div/>
+          <div style={something} className='w3-white w3-padding-32 w3-center w3-padding-8'>
+            {test}
           </div>
         </div>
-        <div className="w3-row">
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('black')}} className="w3-btn w3-black"></button>
-          </div>
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('brown')}} className="w3-btn w3-brown"></button>
-          </div>
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('gray')}} className="w3-btn w3-gray"></button>
-          </div>
-          <div className="w3-cell m3">
-            <button onClick={() => {this.changeColor('lightgray')}} className="w3-btn w3-lightgray"></button>
-          </div>
-        </div>
+        <footer className={'w3-container w3-padding-8 ' + this.state.theme.classColor}>
+          <button onClick={this.props.shouldMount} className={'w3-right w3-button ' + this.state.theme.textColor}>Close</button>
+        </footer>
       </div>
     );
   }
