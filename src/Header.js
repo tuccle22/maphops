@@ -1,29 +1,30 @@
 import React from 'react';
-
 import github from './images/github.png';
 import linkedin from './images/linkedin.png';
 import ThemePicker from './ThemePicker.js';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import './Animation.scss';
 
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isShown: true
+
     };
   }
 
+
   onClick() {
+    console.log('clicked')
     this.setState({isShown: !this.state.isShown});
+
   }
 
   render() {
     const icon = {
       width: '32px',
       height: '32px'
-    }
-    const small = {
-      width: '16px',
-      height: '16px'
     }
 
     return (
@@ -39,14 +40,23 @@ export default class Header extends React.Component {
             <img alt={this.props.github} src={github} style={icon}/>
           </a>
         </h3>
-        {!this.state.isShown ?
-          <div className='w3-modal w3-show'>
-            <div className='w3-modal-content w3-card-8 w3-animate-top'>
-              <ThemePicker shouldMount={this.onClick.bind(this)}/>
+        <ReactCSSTransitionGroup
+          transitionName="example"
+          transitionAppear={true}
+          transitionAppearTimeout={500}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}
+          transitionEnter={true}
+          transitionLeave={true}>
+          {!this.state.isShown ?
+            <div className='w3-modal w3-show'>
+              <div className='w3-modal-content w3-card-8'>
+                <ThemePicker shouldMount={this.onClick.bind(this)}/>
+              </div>
             </div>
-          </div>
-          : ''
-        }
+          : '' }
+        </ReactCSSTransitionGroup>
+
       </div>
     );
   }

@@ -30,8 +30,10 @@ export default class Head extends Reflux.Component {
                 ]}
                 link={[
                   {rel: 'stylesheet', href: 'https://www.w3schools.com/lib/w3.css'},
+                  {rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'},
                   {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=PT+Serif'},
                   {rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons'},
+                  {rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css'},
                   {rel: 'apple-touch-icon', sizes: '180x180', href: '/images/head/apple-touch-icon.png'},
                   {rel: 'mask-icon', href: 'images/head/safari-pinned-tab.svg', color: '#5bbad5'},
                   {rel: 'icon', type: 'image/png', href: '/images/head/favicon-16x16.png', sizes: '16x16'},
