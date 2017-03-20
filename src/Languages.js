@@ -4,7 +4,7 @@ export default class LeftSide extends React.Component {
 
   render() {
 
-    var styles = 'w3-round-xlarge ' + this.props.theme.color;
+    var styles = 'w3-round-xlarge ' + this.props.theme.classColor;
 
     const java = { height: "16px", width: "90%" };
     const python = { height: "16px", width: "80%" };

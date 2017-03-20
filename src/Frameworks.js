@@ -8,7 +8,7 @@ export default class Frameworks extends React.Component {
       'w3-container ' +
       'w3-center ' +
       'w3-round-xlarge ' +
-      this.props.theme.color
+      this.props.theme.classColor
     ;
 
     return (
