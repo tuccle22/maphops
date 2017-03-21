@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './self.jpg';
+import logo from './images/self.jpg';
 
 export default class Photo extends React.Component {
 

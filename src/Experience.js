@@ -1,6 +1,14 @@
 import React from 'react';
+import Reflux from 'reflux';
+import ThemeStore from './reflux/ThemeStore.js'
 
-export default class Experience extends React.Component {
+export default class Experience extends Reflux.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { }; // our store will add its own state to the component's
+    this.store = ThemeStore;
+  }
 
   render() {
 
@@ -14,10 +22,10 @@ export default class Experience extends React.Component {
             <h5 className="w3-opacity">
               <b>Ping4 Inc | Nashua, NH</b>
             </h5>
-            <h6 className={this.props.theme.textColor}>
+            <h6 className={this.state.theme.textColor}>
               <i className="w3-margin-right material-icons w3-cell-middle">date_range</i>
               June 2016 - &nbsp;
-              <span className={'w3-tag w3-round ' + this.props.theme.color}>Current</span>
+              <span className={'w3-tag w3-round ' + this.state.theme.classColor}>Current</span>
             </h6>
             <p>
               Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in
@@ -30,7 +38,7 @@ export default class Experience extends React.Component {
             <h5 className="w3-opacity">
               <b>UNH Manchester | Manchester, NH</b>
             </h5>
-            <h6 className={this.props.theme.textColor}>
+            <h6 className={this.state.theme.textColor}>
               <i className="w3-margin-right material-icons w3-cell-middle">date_range</i>
               September 2015 - May 2016
             </h6>
@@ -45,7 +53,7 @@ export default class Experience extends React.Component {
             <h5 className="w3-opacity">
               <b>Single Digits | Bedford, NH</b>
             </h5>
-            <h6 className={this.props.theme.textColor}>
+            <h6 className={this.state.theme.textColor}>
               <i className="w3-margin-right material-icons w3-cell-middle">date_range</i>
               February 2014 - April 2015
             </h6>
@@ -60,7 +68,7 @@ export default class Experience extends React.Component {
             <h5 className="w3-opacity">
               <b>FairPoint Communications | Manchester, NH</b>
             </h5>
-            <h6 className={this.props.theme.textColor}>
+            <h6 className={this.state.theme.textColor}>
               <i className="w3-margin-right material-icons w3-cell-middle">date_range</i>
               January 2012 - January 2013
             </h6>
