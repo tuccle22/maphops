@@ -16,9 +16,7 @@ export default class Header extends React.Component {
 
 
   onClick() {
-    console.log('clicked')
     this.setState({isShown: !this.state.isShown});
-
   }
 
   render() {
