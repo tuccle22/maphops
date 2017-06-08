@@ -25,7 +25,7 @@ export default class Experience extends Reflux.Component {
             <h6 className={this.state.theme.textColor}>
               <i className="w3-margin-right material-icons w3-cell-middle">date_range</i>
               June 2016 - &nbsp;
-              <span className={'w3-tag w3-round ' + this.state.theme.classColor}>Current</span>
+              <div className={'w3-tag w3-round w3-text-white w3-padding-4 ' + this.state.theme.classColor}>Current</div>
             </h6>
             <p>
               Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in
