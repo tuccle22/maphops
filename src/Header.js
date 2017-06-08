@@ -9,11 +9,10 @@ export default class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isShown: true
+      isShown: false
 
     };
   }
-
 
   onClick() {
     this.setState({isShown: !this.state.isShown});
